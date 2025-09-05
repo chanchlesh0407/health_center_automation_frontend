@@ -1,0 +1,147 @@
+{
+  "hero": {
+    "title": "Health Automation",
+    "subtitle": "Streamline healthcare operations with intelligent automation solutions that enhance patient care and operational efficiency",
+    "videoUrl": "https://player.cloudinary.com/embed/?cloud_name=dwemivxbp&public_id=healthCare_wztokf&profile=cld-default&autoplay=true&muted=true&loop=true&fit=cover&crop=fill&width=1920&height=1080",
+    "ctaText": "Get Started"
+  },
+  "features": {
+    "title": "Key Features",
+    "subtitle": "Discover how our automation solutions transform healthcare workflows",
+    "items": [
+      {
+        "title": "Activity & Sleep Tracking",
+        "description": "Monitor your daily activities and sleep patterns with advanced sensors and AI analysis",
+        "icon": "activity"
+      },
+      {
+        "title": "Diet & Nutrition Guidance",
+        "description": "Get personalized nutrition recommendations and meal planning based on your health goals",
+        "icon": "nutrition"
+      },
+      {
+        "title": "AI Health Recommendations",
+        "description": "Receive intelligent health insights and recommendations powered by machine learning",
+        "icon": "ai"
+      },
+      {
+        "title": "Medication Reminders",
+        "description": "Never miss a dose with smart medication reminders and tracking system",
+        "icon": "medication"
+      }
+    ]
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Get started with Health Automation in just 4 simple steps",
+    "steps": [
+      {
+        "step": "1",
+        "title": "Sign Up",
+        "description": "Create your account and complete your health profile in minutes",
+        "icon": "signup"
+      },
+      {
+        "step": "2",
+        "title": "Track Your Health",
+        "description": "Start monitoring your daily activities, sleep, and nutrition automatically",
+        "icon": "track"
+      },
+      {
+        "step": "3",
+        "title": "Get Insights",
+        "description": "Receive personalized health insights and recommendations from our AI",
+        "icon": "insights"
+      },
+      {
+        "step": "4",
+        "title": "Improve Your Lifestyle",
+        "description": "Make informed decisions and improve your health with data-driven guidance",
+        "icon": "improve"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Why Choose Health Automation",
+    "subtitle": "Experience the future of personalized healthcare",
+    "items": [
+      {
+        "title": "Automated Smart Insights",
+        "description": "Get intelligent health recommendations without manual tracking",
+        "icon": "automation"
+      },
+      {
+        "title": "Easy-to-Use Interface",
+        "description": "Intuitive design that makes health management simple and enjoyable",
+        "icon": "interface"
+      },
+      {
+        "title": "Works on Any Device",
+        "description": "Access your health data anywhere, anytime across all your devices",
+        "icon": "devices"
+      },
+      {
+        "title": "Personalized Reminders",
+        "description": "Customized notifications and reminders tailored to your lifestyle",
+        "icon": "reminders"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Users Say",
+    "subtitle": "Join thousands of users who have transformed their health journey",
+    "items": [
+      {
+        "quote": "Health Automation has completely changed how I manage my health. The AI recommendations are spot-on!",
+        "author": "Sarah Johnson",
+        "position": "Fitness Enthusiast",
+        "image": "user1"
+      },
+      {
+        "quote": "The medication reminders and sleep tracking features have been life-changing for my daily routine.",
+        "author": "Michael Chen",
+        "position": "Health Conscious Professional",
+        "image": "user2"
+      },
+      {
+        "quote": "Finally, a health app that actually understands my needs and provides personalized guidance.",
+        "author": "Emily Rodriguez",
+        "position": "Wellness Coach",
+        "image": "user3"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Start Automating Your Health Today",
+    "subtitle": "Join thousands of users who have transformed their health journey with our intelligent automation platform",
+    "ctaText": "Get Started Free",
+    "secondaryCtaText": "Download App"
+  },
+  "contact": {
+    "title": "Get Started Today",
+    "subtitle": "Ready to transform your healthcare operations? Contact us for a personalized demo.",
+    "ctaText": "Schedule Demo"
+  },
+  "footer": {
+    "companyName": "Health Automation",
+    "description": "Intelligent healthcare solutions that enhance patient care and operational efficiency",
+    "links": {
+      "about": "About Us",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "socialMedia": {
+      "facebook": "https://facebook.com/healthautomation",
+      "twitter": "https://twitter.com/healthautomation",
+      "linkedin": "https://linkedin.com/company/healthautomation",
+      "instagram": "https://instagram.com/healthautomation"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "subtitle": "Get the latest health automation tips and updates delivered to your inbox",
+      "placeholder": "Enter your email address",
+      "buttonText": "Subscribe"
+    }
+  }
+}
