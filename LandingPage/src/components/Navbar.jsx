@@ -72,7 +72,7 @@ const Navbar = () => {
               >
                 Features
               </button>
-              <button
+              {/* <button
                 onClick={() => scrollToSection("how-it-works")}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   isScrolled
@@ -81,7 +81,7 @@ const Navbar = () => {
                 }`}
               >
                 How It Works
-              </button>
+              </button> */}
               <button
                 onClick={() => scrollToSection("testimonials")}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
@@ -102,7 +102,7 @@ const Navbar = () => {
               >
                 Contact
               </button>
-              <button
+              {/* <button
                 onClick={() => scrollToSection("contact")}
                 className={`ml-4 px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isScrolled
@@ -111,7 +111,7 @@ const Navbar = () => {
                 }`}
               >
                 Get Started
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -223,7 +223,7 @@ const Navbar = () => {
             >
               Contact
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection("contact")}
               className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200 ${
                 isScrolled
@@ -232,7 +232,7 @@ const Navbar = () => {
               }`}
             >
               Get Started
-            </button>
+            </button> */}
           </div>
         </div>
       )}
