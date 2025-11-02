@@ -56,14 +56,27 @@ const App = () => {
           />
         );
       case 'register':
-        return (
-          <RegisterPage
-            role={selectedRole}
-            onBack={() => navigateTo('login')}
-            onRegister={handleRegisterSuccess}
-            onRoleSelection={() => navigateTo('role-selection')}
-          />
-        );
+        // Only allow registration for patients
+        if (selectedRole === 'patient') {
+          return (
+            <RegisterPage
+              role={selectedRole}
+              onBack={() => navigateTo('login')}
+              onRegister={handleRegisterSuccess}
+              onRoleSelection={() => navigateTo('role-selection')}
+            />
+          );
+        } else {
+          // Redirect to login if trying to register as doctor or staff
+          return (
+            <LoginPage
+              role={selectedRole}
+              onBack={() => navigateTo('role-selection')}
+              onRegister={() => navigateTo('register')}
+              onLogin={handleLoginSuccess}
+            />
+          );
+        }
       default:
         return <RoleSelection onRoleSelect={navigateTo} />;
     }

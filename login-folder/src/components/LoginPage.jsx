@@ -127,18 +127,20 @@ const LoginPage = ({ role, onBack, onRegister, onLogin }) => {
             </button>
           </div>
 
-          {/* Register Link */}
-          <div className="mt-6 text-center">
-            <p className="text-gray-600">
-              Don't have an account?{' '}
-              <button
-                onClick={onRegister}
-                className="text-blue-600 hover:text-blue-800 font-medium"
-              >
-                Register here
-              </button>
-            </p>
-          </div>
+          {/* Register Link - Only show for patients */}
+          {role === 'patient' && (
+            <div className="mt-6 text-center">
+              <p className="text-gray-600">
+                Don't have an account?{' '}
+                <button
+                  onClick={onRegister}
+                  className="text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  Register here
+                </button>
+              </p>
+            </div>
+          )}
 
           {/* Back Button */}
           <div className="mt-6 text-center">

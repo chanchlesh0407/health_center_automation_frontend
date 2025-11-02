@@ -80,27 +80,7 @@ function App() {
         <Hero data={data.hero} />
       </section>
 
-      {/* Features Section */}
-      {/* {data.features && (
-        <section id="features">
-          <Features data={data.features} />
-        </section>
-      )} */}
-
-      {/* How It Works Section */}
-      {/* {data.howItWorks && (
-        <section id="how-it-works">
-          <HowItWorks data={data.howItWorks} />
-        </section>
-      )} */}
-
-      {/* Benefits Section */}
-      {/* {data.benefits && (
-        <section id="benefits">
-          <Benefits data={data.benefits} />
-        </section>
-      )} */}
-
+       
       {/* Testimonials Section */}
       {data.testimonials && (
         <section id="testimonials">
