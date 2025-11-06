@@ -9,7 +9,6 @@ export default function StatsGrid({ stats }: Props) {
     { label: 'Patients', value: stats.patients },
     { label: 'Appointments', value: stats.appointments },
     { label: 'Tests', value: stats.tests },
-    { label: 'Revenue', value: `₹${stats.revenue.toLocaleString('en-IN')}` },
   ]
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

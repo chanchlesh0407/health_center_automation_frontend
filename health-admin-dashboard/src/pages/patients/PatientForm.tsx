@@ -6,7 +6,24 @@ import type { Patient } from '../../types'
 export default function PatientForm() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [form, setForm] = useState<Partial<Patient>>({ name: '', age: 0, gender: 'Male', mobile: '' })
+  const [form, setForm] = useState<Partial<Patient>>({
+    name: '',
+    age: 0,
+    gender: 'Male',
+    mobile: '',
+    email: '',
+    address: '',
+    dob: '',
+    bloodGroup: '',
+    height: '',
+    weight: '',
+    bloodPressure: '',
+    allergies: '',
+    pastDisease: '',
+    sugarLevel: '',
+    familyHistory: '',
+    chronicDiseases: ''
+  })
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -29,32 +46,97 @@ export default function PatientForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="bg-white rounded-xl shadow-soft p-4 space-y-3">
-      <h3 className="font-semibold">{id === 'new' ? 'Add Patient' : 'Edit Patient'}</h3>
-      <div>
-        <label className="block text-sm mb-1">Name</label>
-        <input className="w-full border rounded px-3 py-2" value={form.name || ''} onChange={(e) => update('name', e.target.value)} required />
-      </div>
-      <div className="grid grid-cols-2 gap-3">
-        <div>
-          <label className="block text-sm mb-1">Age</label>
-          <input type="number" className="w-full border rounded px-3 py-2" value={form.age || 0} onChange={(e) => update('age', Number(e.target.value))} required />
+    <form onSubmit={onSubmit} className="space-y-8">
+      {/* Personal Information - mandatory */}
+      <div className="bg-white rounded-xl shadow-md p-8">
+        <h3 className="text-xl font-semibold text-blue-700 mb-6 border-b pb-3">Personal Information</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm text-gray-600">Name</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.name || ''} onChange={(e) => update('name', e.target.value)} required />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-600">Phone Number</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.mobile || ''} onChange={(e) => update('mobile', e.target.value.replace(/\D/g, '').slice(0,10))} pattern="[0-9]{10}" required />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-600">Email</label>
+            <input type="email" className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.email || ''} onChange={(e) => update('email', e.target.value)} required />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-600">Gender</label>
+            <select className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.gender || 'Male'} onChange={(e) => update('gender', e.target.value as Patient['gender'])}>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div className="md:col-span-2">
+            <label className="block text-sm text-gray-600">Address</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.address || ''} onChange={(e) => update('address', e.target.value)} required />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-600">DOB</label>
+            <input type="date" className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.dob || ''} onChange={(e) => update('dob', e.target.value)} required />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-600">Age</label>
+            <input type="number" className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.age || 0} onChange={(e) => update('age', Number(e.target.value))} required />
+          </div>
         </div>
-        <div>
-          <label className="block text-sm mb-1">Gender</label>
-          <select className="w-full border rounded px-3 py-2" value={form.gender || 'Male'} onChange={(e) => update('gender', e.target.value as Patient['gender'])}>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-          </select>
+      </div>
+
+      {/* Medical Information - optional */}
+      <div className="bg-white rounded-xl shadow-md p-8">
+        <h3 className="text-xl font-semibold text-blue-700 mb-6 border-b pb-3">Medical Information</h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm text-gray-500">Blood Group</label>
+            <select className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.bloodGroup || ''} onChange={(e) => update('bloodGroup', e.target.value)}>
+              <option value="">Select</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm text-gray-500">Height</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="cm" value={form.height || ''} onChange={(e) => update('height', e.target.value)} />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-500">Weight</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="kg" value={form.weight || ''} onChange={(e) => update('weight', e.target.value)} />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-500">Blood Pressure</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="high/low" value={form.bloodPressure || ''} onChange={(e) => update('bloodPressure', e.target.value)} />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-500">Allergies</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.allergies || ''} onChange={(e) => update('allergies', e.target.value)} />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-500">Past Disease</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.pastDisease || ''} onChange={(e) => update('pastDisease', e.target.value)} />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-500">Sugar Level</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="high/low" value={form.sugarLevel || ''} onChange={(e) => update('sugarLevel', e.target.value)} />
+          </div>
+          <div>
+            <label className="block text-sm text-gray-500">Family History</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.familyHistory || ''} onChange={(e) => update('familyHistory', e.target.value)} />
+          </div>
+          <div className="md:col-span-2">
+            <label className="block text-sm text-gray-500">Chronic Diseases</label>
+            <input className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400" value={form.chronicDiseases || ''} onChange={(e) => update('chronicDiseases', e.target.value)} />
+          </div>
         </div>
-      </div>
-      <div>
-        <label className="block text-sm mb-1">Mobile</label>
-        <input className="w-full border rounded px-3 py-2" value={form.mobile || ''} onChange={(e) => update('mobile', e.target.value.replace(/\D/g, '').slice(0,10))} pattern="[0-9]{10}" required />
-      </div>
-      <div className="pt-2">
-        <button type="submit" className="bg-primary text-white rounded px-4 py-2" disabled={loading}>{loading ? 'Saving...' : 'Save'}</button>
+
+        <div className="flex justify-end mt-8">
+          <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg" disabled={loading}>
+            {loading ? 'Saving...' : 'Save'}
+          </button>
+        </div>
       </div>
     </form>
   )

@@ -9,7 +9,9 @@ import CTA from "./components/CTA";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import {Routes , Route} from "react-router-dom" 
-import RoleSelection from "/Users/USER/Desktop/health-automation/healthcenter_automation/login-folder/src/components/RoleSelection.jsx" ;
+// import RoleSelection from "/Users/USER/Desktop/health-automation/healthcenter_automation/login-folder/src/components/RoleSelection.jsx" ;
+
+import RoleSelection from "../../login-folder/src/components/RoleSelection.jsx";
 
 function App() {
   const [data, setData] = useState(null);

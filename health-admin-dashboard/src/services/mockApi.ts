@@ -66,9 +66,9 @@ export async function fetchRecentActivity(page = 1, pageSize = 5): Promise<{ ite
 
 // Patients mock
 let patients: Patient[] = [
-  { id: 'p1', name: 'Ravi Kumar', age: 34, gender: 'Male', mobile: '9876543210' },
-  { id: 'p2', name: 'Asha Singh', age: 29, gender: 'Female', mobile: '9123456780' },
-  { id: 'p3', name: 'Mahesh Gupta', age: 45, gender: 'Male', mobile: '9988776655' },
+  { id: 'p1', name: 'Ravi Kumar', age: 34, gender: 'Male', mobile: '9876543210', email: 'ravi@example.com', address: '12, MG Road, Pune', dob: '1991-05-21' },
+  { id: 'p2', name: 'Asha Singh', age: 29, gender: 'Female', mobile: '9123456780', email: 'asha@example.com', address: '33, Park Lane, Indore', dob: '1996-03-10' },
+  { id: 'p3', name: 'Mahesh Gupta', age: 45, gender: 'Male', mobile: '9988776655', email: 'mahesh@example.com', address: '221B Baker Street, Delhi', dob: '1980-11-02' },
 ]
 
 export async function fetchPatients(): Promise<Patient[]> {

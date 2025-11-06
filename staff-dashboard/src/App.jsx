@@ -7,11 +7,11 @@ const App = () => {
   const [currentView, setCurrentView] = useState('patients')
 
   return (
-    <div className="flex min-h-screen bg-blue-50">
+    <div className="flex h-screen bg-gradient-to-b from-blue-50 to-white">
       <Sidebar currentView={currentView} setCurrentView={setCurrentView} />
-      <main className="flex-1 bg-gray-100 p-6">
-        {currentView === 'patients' && <Patients />}
-        {currentView === 'profile' && <Profile />}
+      <main className="flex-1 p-10 overflow-auto">
+        {currentView === 'patients' && <div className="max-w-5xl mx-auto"><Patients /></div>}
+        {currentView === 'profile' && <div className="max-w-5xl mx-auto"><Profile /></div>}
       </main>
     </div>
   )

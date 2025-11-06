@@ -90,8 +90,8 @@ const Patients = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-      <h1 className="text-3xl font-bold text-gray-900 mb-4">Patients</h1>
+    <div className="bg-white rounded-xl shadow-md p-8">
+      <h2 className="text-2xl font-bold mb-6 flex items-center gap-3 text-blue-700">Patients</h2>
       
       <div className="mb-6">
         <div className="relative">
@@ -100,7 +100,7 @@ const Patients = () => {
             placeholder="Filter"
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10"
+            className="w-full px-4 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10"
           />
           <svg
             className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -121,21 +121,21 @@ const Patients = () => {
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-gray-200">
-              <th className="text-left py-3 px-4 text-gray-700 font-semibold">Time</th>
-              <th className="text-left py-3 px-4 text-gray-700 font-semibold">Patient Name</th>
-              <th className="text-left py-3 px-4 text-gray-700 font-semibold">Reason</th>
-              <th className="text-left py-3 px-4 text-gray-700 font-semibold">Appointment Type</th>
-              <th className="text-left py-3 px-4 text-gray-700 font-semibold">Status</th>
-              <th className="text-left py-3 px-4 text-gray-700 font-semibold">Contact</th>
-              <th className="text-left py-3 px-4 text-gray-700 font-semibold">Actions</th>
+            <tr className="border-b">
+              <th className="text-left py-3 px-4 text-blue-700 font-semibold">Time</th>
+              <th className="text-left py-3 px-4 text-blue-700 font-semibold">Patient Name</th>
+              <th className="text-left py-3 px-4 text-blue-700 font-semibold">Reason</th>
+              <th className="text-left py-3 px-4 text-blue-700 font-semibold">Appointment Type</th>
+              <th className="text-left py-3 px-4 text-blue-700 font-semibold">Status</th>
+              <th className="text-left py-3 px-4 text-blue-700 font-semibold">Contact</th>
+              <th className="text-left py-3 px-4 text-blue-700 font-semibold">Actions</th>
             </tr>
           </thead>
           <tbody>
             {filteredPatients.map((patient) => (
               <tr
                 key={patient.id}
-                className="border-b border-gray-100 hover:bg-blue-50 transition-colors cursor-pointer"
+                className="border-b hover:bg-blue-50 transition-colors cursor-pointer"
               >
                 <td className="py-3 px-4 text-gray-800">{patient.time}</td>
                 <td className="py-3 px-4 text-gray-800 font-medium">{patient.name}</td>

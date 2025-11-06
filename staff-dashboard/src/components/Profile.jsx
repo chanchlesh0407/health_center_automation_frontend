@@ -28,37 +28,32 @@ const Profile = () => {
   }
 
   return (
-    <div className="bg-gray-100 min-h-screen -m-6 p-6">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Profile</h1>
-      
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 max-w-4xl">
+    <div className="">
+      <div className="bg-white rounded-xl shadow-md p-8">
+        <h3 className="text-xl font-semibold text-blue-700 mb-6 border-b pb-3">Personal Information</h3>
         <form onSubmit={handleSave}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left Column */}
             <div className="space-y-6">
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
-                  Email:
-                </label>
+                <label className="block text-sm text-gray-500">Email</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-blue-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Enter your email"
+                  className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  placeholder="email@example.com"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
-                  Gender:
-                </label>
+                <label className="block text-sm text-gray-500">Gender</label>
                 <select
                   name="gender"
                   value={formData.gender}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-blue-300 rounded-lg   bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 >
                   <option value="">Select gender</option>
                   <option value="male">Male</option>
@@ -68,15 +63,13 @@ const Profile = () => {
               </div>
 
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
-                  Date Of Birth:
-                </label>
+                <label className="block text-sm text-gray-500">Date Of Birth</label>
                 <input
                   type="date"
                   name="dateOfBirth"
                   value={formData.dateOfBirth}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-blue-300 rounded-lg   bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
               </div>
             </div>
@@ -84,39 +77,35 @@ const Profile = () => {
             {/* Right Column */}
             <div className="space-y-6">
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
-                  Phone Number:
-                </label>
+                <label className="block text-sm text-gray-500">Phone Number</label>
                 <input
                   type="tel"
                   name="phoneNumber"
                   value={formData.phoneNumber}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-blue-300 rounded-lg  bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Enter your phone number"
+                  className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  placeholder="+91 9876543210"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
-                  Address:
-                </label>
+                <label className="block text-sm text-gray-500">Address</label>
                 <textarea
                   name="address"
                   value={formData.address}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-2 border border-blue-300 rounded-lg  bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none"
-                  placeholder="Enter your address"
+                  className="w-full mt-1 px-3 py-2 border rounded-lg bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+                  placeholder="123, Main Street, Anytown, USA"
                 />
               </div>
             </div>
           </div>
 
-          <div className="mt-8 flex items-center gap-4">
+          <div className="mt-8 flex items-center gap-4 justify-end">
             <button
               type="submit"
-              className="bg-blue hover:bg-cyan-600 text-white font-medium py-2 px-6 rounded-lg transition-colors"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors"
             >
               Save Profile
             </button>

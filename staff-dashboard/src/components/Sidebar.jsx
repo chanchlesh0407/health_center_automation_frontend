@@ -2,20 +2,20 @@ import React from 'react'
 
 const Sidebar = ({ currentView, setCurrentView }) => {
   return (
-    <div className="w-64 bg-blue-600 min-h-screen p-6 flex flex-col shadow-lg border-r border-blue-200">
+    <div className="w-64 bg-gradient-to-b from-blue-500 to-blue-500 min-h-screen p-6 flex flex-col shadow-md border rounded-lg">
       <div className="mb-8">
-        <p className="text-white text-sm mb-1">Welcome Back,</p>
-        <h2 className="text-2xl font-bold text-white">Divyansh Chourey</h2>
+        <p className="text-blue-100 text-sm mb-1">Dashboard</p>
+        <h2 className="text-lg font-semibold text-white">Welcome Back,</h2>
+        <h1 className="text-xl font-bold text-white">Divyansh Chourey</h1>
       </div>
 
-      <div className="mb-4">
-        <p className="text-white text-sm mb-3 font-semibold">Menu</p>
+      <div className="mb-4 space-y-2">
         <button
           onClick={() => setCurrentView('profile')}
-          className={`w-full py-3 px-4 rounded-lg text-left font-medium transition-colors duration-200 ${
+          className={`w-full py-3 px-4 rounded-lg font-medium transition-all flex items-center gap-3 ${
             currentView === 'profile'
-              ? 'bg-blue-500 text-white shadow-md'
-              :  'text-white '
+              ? 'bg-blue-100 text-blue-900'
+              : 'hover:bg-blue-700 hover:text-white text-white'
           }`}
         >
           Profile
@@ -23,10 +23,10 @@ const Sidebar = ({ currentView, setCurrentView }) => {
 
         <button
           onClick={() => setCurrentView('patients')}
-          className={`w-full py-3 px-4 rounded-lg text-left font-medium transition-colors duration-200 mt-2 ${
+          className={`w-full py-3 px-4 rounded-lg font-medium transition-all flex items-center gap-3 ${
             currentView === 'patients'
-              ? 'bg-blue-500 text-white shadow-md'
-              :  'text-white '
+              ? 'bg-blue-100 text-blue-900'
+              : 'hover:bg-blue-700 hover:text-white text-white'
           }`}
         >
           View Patients

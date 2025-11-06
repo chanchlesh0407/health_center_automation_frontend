@@ -1,40 +1,58 @@
 import { ReactNode, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 interface Props {
   userName: string
-  onSignOut: () => void
   children: ReactNode
-  onToggleTheme: () => void
 }
 
-export default function DashboardLayout({ userName, onSignOut, onToggleTheme, children }: Props) {
-  const [open, setOpen] = useState(false)
+export default function DashboardLayout({ userName, children }: Props) {
+  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const location = useLocation()
+
+  const linkBase = "w-full py-3 px-4 rounded-lg font-medium transition-all flex items-center gap-3"
+
+  function linkClass(to: string) {
+    const isActive = location.pathname === to || (to !== "/" && location.pathname.startsWith(to))
+    return `${linkBase} ${isActive ? 'bg-blue-100 text-blue-900' : 'hover:bg-blue-700 hover:text-white'}`
+  }
+
   return (
-    <div className="min-h-screen bg-[var(--muted)]">
-      <header className="bg-white border-b shadow-soft">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <button className="md:hidden border rounded px-2 py-1" onClick={() => setOpen((s) => !s)}>Menu</button>
-            <span className="font-semibold text-primary">Health Admin</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <button onClick={onToggleTheme} className="border rounded px-3 py-1">Theme</button>
-            <div className="text-sm">{userName}</div>
-            <button onClick={onSignOut} className="text-sm text-red-600">Sign out</button>
-          </div>
+    <div className="flex h-screen bg-gradient-to-b from-blue-50 to-white">
+      <aside
+        className={`bg-gradient-to-b from-blue-500 to-blue-500 text-white p-6 transition-all duration-300 shadow-md ${sidebarOpen ? 'w-64' : 'w-20'}`}
+      >
+        <div className="flex justify-between items-center mb-10">
+          {sidebarOpen && (
+            <div>
+              <p className="text-blue-100 text-sm mb-1">Dashboard</p>
+              <h2 className="text-lg font-semibold">Welcome Back,</h2>
+              <h1 className="text-xl font-bold">{userName}</h1>
+            </div>
+          )}
+          <button
+            onClick={() => setSidebarOpen((s) => !s)}
+            className={`p-2 hover:bg-blue-700 rounded-lg transition-colors ${sidebarOpen ? '' : 'mx-auto'}`}
+            aria-label="Toggle sidebar"
+          >
+            {/* Simple hamburger/close icon using bars */}
+            <span className="block w-5 h-0.5 bg-white mb-1"></span>
+            <span className="block w-5 h-0.5 bg-white mb-1"></span>
+            <span className="block w-5 h-0.5 bg-white"></span>
+          </button>
         </div>
-      </header>
-      <div className="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6">
-        <aside className={`bg-white rounded-xl shadow-soft p-4 md:block ${open ? 'block' : 'hidden'}`}>
-          <nav className="space-y-2 text-sm">
-            <Link className="block px-2 py-1 rounded hover:bg-gray-100" to="/">Dashboard</Link>
-            <Link className="block px-2 py-1 rounded hover:bg-gray-100" to="/patients">Patients</Link>
-            <Link className="block px-2 py-1 rounded hover:bg-gray-100" to="/appointments">Appointments</Link>
-            <button className="block px-2 py-1 rounded hover:bg-gray-100 text-left w-full">Tests</button>
-          </nav>
-        </aside>
-        <main>{children}</main>
+
+        <nav className="space-y-2">
+          <Link to="/" className={linkClass('/')}>Dashboard</Link>
+          <Link to="/patients" className={linkClass('/patients')}>Patients</Link>
+          <Link to="/appointments" className={linkClass('/appointments')}>Appointments</Link>
+        </nav>
+      </aside>
+
+      <div className="flex-1 p-6 overflow-auto">
+        <main className="max-w-6xl mx-auto space-y-6">
+          {children}
+        </main>
       </div>
     </div>
   )
