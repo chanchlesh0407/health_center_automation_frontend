@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: '/login/',
   build: {
-    outDir: resolve(__dirname, '../LandingPage/public/login'),
+    outDir: resolve(__dirname, '../public/login'),
     emptyOutDir: true
   },
   resolve: {
@@ -21,7 +21,8 @@ export default defineConfig({
       '@doctor-dashboard': resolve(__dirname, '../doctor-dashboard/doctor-dashboard/src'),
       // Ensure React is deduped - use login-folder's React for all imports
       'react': resolve(__dirname, 'node_modules/react'),
-      'react-dom': resolve(__dirname, 'node_modules/react-dom')
+      'react-dom': resolve(__dirname, 'node_modules/react-dom'),
+      'tailwindcss': resolve(__dirname, 'node_modules/tailwindcss')
     },
     dedupe: ['react', 'react-dom']
   },
